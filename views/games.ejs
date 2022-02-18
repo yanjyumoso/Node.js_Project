@@ -1,0 +1,75 @@
+<%- include ('header') %>
+
+    <h2>Games</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Player 1</th>
+                <th>Player 2</th>
+                <th>Number of Moves</th>
+                <th>Time of Last Move</th>
+                <th>State</th>
+                <th>Board</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0; i < stats.length; i++){ %>
+                <% var result = stats[i].board; %>
+                    <tr>
+                        <td>
+                            <%= stats[i].player1Name %>
+                        </td>
+                        <td>
+                            <%= stats[i].player2Name %>
+                        </td>
+                        <td>
+                            <%= stats[i].moveCnt %>
+                        </td>
+                        <td>
+                            <%= new Date(stats[i].lastMoveTime) %>
+                        </td>
+                        <td>
+                            <%= stats[i].state %>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <%= result[0] %>
+                                    </td>
+                                    <td>
+                                        <%= result[1] %>
+                                    </td>
+                                    <td>
+                                        <%= result[2] %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= result[3] %>
+                                    </td>
+                                    <td>
+                                        <%= result[4] %>
+                                    </td>
+                                    <td>
+                                        <%= result[5] %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= result[6] %>
+                                    </td>
+                                    <td>
+                                        <%= result[7] %>
+                                    </td>
+                                    <td>
+                                        <%= result[8] %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <% } %>
+        </tbody>
+
+    </table>
+    <%- include ('footer') %>

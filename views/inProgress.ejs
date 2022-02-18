@@ -1,0 +1,33 @@
+<%- include ('header') %>
+
+    <h2>In Progress</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Player 1</th>
+                <th>Player 2</th>
+                <th>Last Move</th>
+                <th>Game State
+                    <th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0; i < stats.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= stats[i].player1Name %>
+                    </td>
+                    <td>
+                        <%= stats[i].player2Name %>
+                    </td>
+                    <td>
+                        <%= new Date(stats[i].lastMoveTime) %>
+                    </td>
+                    <td>
+                        <%= stats[i].state %>
+                    </td>
+                </tr>
+                <% } %>
+                    <tbody>
+    </table>
+    <%- include ('footer') %>

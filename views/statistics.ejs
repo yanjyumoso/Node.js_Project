@@ -1,0 +1,39 @@
+<%- include ('header') %>
+
+    </style>
+    <h2>Player Statistics</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Wins</th>
+                <th>Losts</th>
+                <th>Stalemate</th>
+                <th>Win Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0; i < stats.length; i++){ %>
+                <tr>
+                    <% var win = ((stats[i].won / (stats[i].lost + stats[i].won))*100).toFixed(2); %>
+                        <% if (isNaN(win)) { win = 0; } %>
+                            <% if (stats[i].won > 0 && stats[i].lost == 0) { win = 100; } %>
+                                <td>
+                                    <%= stats[i].name %>
+                                </td>
+                                <td>
+                                    <%= stats[i].won %>
+                                </td>
+                                <td>
+                                    <%= stats[i].lost %>
+                                </td>
+                                <td>
+                                    <%= stats[i].stalemate %>
+                                </td>
+                                <td>
+                                    <%= win %>%</td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+    <%- include ('footer') %>

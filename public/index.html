@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="campbest">
+
+    <title>campbest game</title>
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+<style>
+td {
+	border: thin solid black;
+		width: 50px;
+			height: 50px;
+}
+label
+	{
+		margin-top: 10px;
+	}
+	input {
+		margin-bottom: 10px;
+	}
+</style>
+  </head>
+
+  <body id="page-top">
+
+    <!-- About Section -->
+    <section id="startGame" class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="">Signup to play TicTacToe with a friend</h2>
+	    <h3>Leave GAMEID blank if you are first player</h3>
+	    <form id='start'>
+		    <div><label for='name'>Your Name</label><br><input type='text' id='name'></div>
+		    <div><label for='gameid'>Game ID: (blank for first player)</label><br><input type='text' id='gameid'></div>
+		    <div><input type='submit' id="startbutton" name='Start' value="Start">
+		    <div><input type='submit' id='testbutton1' name='Start' value="test1">
+			    <input type='submit' id='testbutton2' name='Start' value="test2"><br>For testing, starts existing game as given player</div>
+	    </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="waiting" class="continer text-center">
+	    <h2>Waiting on partner</h2>
+	    <p>Tell your partner to start a game with id = <span id='gameId'></p>
+    </div>
+
+    <!-- play Section -->
+    <div id="play" class="projects-section bg-light container">
+	    <div class="row">
+		    <div class="col-sm">
+	    <p id='turn'></p>
+		    </div>
+		    <div class="col-sm">
+	      <table >
+		      <tr><td id='cell0'></td><td id='cell1'></td><td id='cell2'></td></tr>
+		      <tr><td id='cell3'></td><td id='cell4'></td><td id='cell5'></td></tr>
+		      <tr><td id='cell6'></td><td id='cell7'></td><td id='cell8'></td></tr>
+	      </table>
+		    </div>
+		    <div class="col-sm"></div>
+	    </div> <!-- row-->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="small text-center">
+      <div class="container">
+	    <p>Gameid= <span id="gameIDOutput"></span></p>
+	    <div>
+		    <a href=''>HOME</a> <a href='/manage'>Manage Boards</a></div>
+	</div>
+
+	<p>
+	Copyright &copy;Scott Campbell 2019 </p>
+      </div>
+    </footer>
+
+    <!-- Custom scripts for this template -->
+    <script src="script.js"></script>
+    <div id='debug'></div>
+
+  </body>
+
+</html>
+

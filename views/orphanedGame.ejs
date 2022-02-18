@@ -1,0 +1,26 @@
+<%- include ('header') %>
+
+    <h2>Orphaned Games</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Player 1</th>
+                <th>Time Created</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% for (let i=0; i < stats.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= stats[i].player1Name %>
+                    </td>
+                    <td>
+                        <%= new Date(stats[i].lastMoveTime) %>
+                    </td>
+                </tr>
+        </tbody>
+
+        <% } %>
+    </table>
+    <%- include ('footer') %>
